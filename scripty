@@ -526,19 +526,19 @@ local function Initiate()
 					Variables["Player"].Character.HumanoidRootPart.CFrame = Host.Character.HumanoidRootPart.CFrame*CFrame.new(0,0,-1)
 				end
 			elseif Args[1] == ".bring" and Args[2] == "host" and BringLocations[string.lower(Args[3])] then
-				BringPlr(Host,BringLocations[string.lower(Args[3])])
                 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('/CHERRYDHC ALT ~ STOP MOVING', 'All')
+				BringPlr(Host,BringLocations[string.lower(Args[3])])
 			elseif Args[1] == ".bring" and BringLocations[string.lower(Args[3])] then
 				local FoundPlayer = GetPlayerFromString(Args[2])
 				if FoundPlayer then
-					BringPlr(FoundPlayer,BringLocations[string.lower(Args[3])])
 					game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('/CHERRYDHC ALT ~ STOP MOVING', 'All')
+					BringPlr(FoundPlayer,BringLocations[string.lower(Args[3])])
 				end
 			elseif Args[1] == ".bring" and Args[3] == "host" then
 				local FoundPlayer = GetPlayerFromString(Args[2])
 				if FoundPlayer then
-					BringPlr(FoundPlayer,nil)
 					game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('/CHERRYDHC ALT ~ STOP MOVING', 'All')
+					BringPlr(FoundPlayer,nil)
 				end
 			elseif Message == ".setup bank" then
 				Setup("Bank")
